@@ -134,6 +134,7 @@ class MESH_PT_ToolPathsPanel(bpy.types.Panel):
         box.prop(tool_paths, "ffmpeg_seconds")
         box.prop(tool_paths, "ffmpeg_start_time", text="Start time")
         box.prop(tool_paths, "ffmpeg_end_time", text="End time")
+        box.prop(tool_paths, "ffmpeg_scale_percentage", text="Image size %")
 
         box.operator( "wm.call_ffmpeg", text="Extract frames" )
 

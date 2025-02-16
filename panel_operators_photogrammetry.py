@@ -81,12 +81,13 @@ class WM_OT_FileSelector(bpy.types.Operator):
         end_time = scene.ffmpeg_end_time
         frames_qty = scene.ffmpeg_frames
         seconds_qty = scene.ffmpeg_seconds
+        scale_percentage = scene.ffmpeg_scale_percentage
 
         if not self.filepath:
             self.report({'WARNING'}, "No file selected.")
             return {'CANCELLED'}
 
-        extract_frames_with_ffmpeg(self.filepath, ffmpeg_path, start_time, end_time, frames_qty, seconds_qty)
+        extract_frames_with_ffmpeg(self.filepath, ffmpeg_path, start_time, end_time, frames_qty, seconds_qty, scale_percentage )
 
         self.report({'INFO'}, "Frame extraction completed.")
         return {'FINISHED'}
