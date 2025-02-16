@@ -8,4 +8,6 @@ __temp
 colmap
 images
 photogrammetry
+images_*
+textures
 
