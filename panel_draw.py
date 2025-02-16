@@ -4,8 +4,8 @@ import gpu
 from gpu.types import GPUBatch
 from mathutils import Vector
 
-from panel_utils import *
-from utils_photogrammetry import *
+from .panel_utils import *
+from .utils_photogrammetry import *
 
 def draw_callback():
     draw_pins()
@@ -91,11 +91,17 @@ class VIEW3D_OT_draw_red_markers(bpy.types.Operator):
         context.window_manager.modal_handler_add(self)
         return {'RUNNING_MODAL'}
 
+
+# This one is to be called when pins checkbox or point cloud check box is triggered.
+def update_draw_operator(self, context):
+    bpy.ops.view3d.draw_red_markers('INVOKE_DEFAULT')
+
+
 # Registration functions
 def register_draw():
     bpy.utils.register_class(VIEW3D_OT_draw_red_markers)
     # Start the operator???
-    bpy.ops.view3d.draw_red_markers('INVOKE_DEFAULT')
+    #bpy.ops.view3d.draw_red_markers('INVOKE_DEFAULT')
 
     print("Registered VIEW3D_OT_draw_red_markers")
 

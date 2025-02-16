@@ -11,13 +11,13 @@ from bpy.props import StringProperty
 import sys
 import os
 
-dir = os.path.dirname(bpy.data.filepath)
-if not dir in sys.path:
-    sys.path.append( dir )
+#dir = os.path.dirname(bpy.data.filepath)
+#if not dir in sys.path:
+#    sys.path.append( dir )
 
-from panel_properties import *
-from panel_utils      import *
-from panel_async      import *
+from .panel_properties import *
+from .panel_utils      import *
+from .panel_async      import *
 
 
 class MESH_OT_set_mesh_editable( bpy.types.Operator ):

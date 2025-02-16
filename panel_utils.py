@@ -12,11 +12,11 @@ import json
 
 import numpy as np
 
-dir = os.path.dirname(bpy.data.filepath)
-if not dir in sys.path:
-    sys.path.append( dir )
+#dir = os.path.dirname(bpy.data.filepath)
+#if not dir in sys.path:
+#    sys.path.append( dir )
 
-from panel_properties import *
+from .panel_properties import *
 
 
 def get_selected_mesh():
@@ -238,6 +238,9 @@ def add_selected_anchors( mesh ):
             if index not in anchor_indices:
                 pos = vert.co
                 add_mesh_anchor( mesh, index, pos )
+    
+    # Execute drawing markers.
+    bpy.ops.view3d.draw_red_markers('INVOKE_DEFAULT')
 
     # Update the scene and force redraw
     bpy.context.view_layer.update()  # Update the view layer

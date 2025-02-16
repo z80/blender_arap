@@ -2,8 +2,8 @@
 import asyncio
 import bpy
 
-from utils_main import *
-from panel_utils import *
+from .utils_main import *
+from .panel_utils import *
 
 
 

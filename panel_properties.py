@@ -5,10 +5,9 @@ import sys
 import os
 from collections import deque
 
-dir = os.path.dirname(bpy.data.filepath)
-if not dir in sys.path:
-    sys.path.append( dir )
-    
+#dir = os.path.dirname(bpy.data.filepath)
+#if not dir in sys.path:
+#    sys.path.append( dir )
 
 class MeshVertexProp(bpy.types.PropertyGroup):
     pos: bpy.props.FloatVectorProperty(
@@ -52,6 +51,9 @@ class AnchorPointProp(bpy.types.PropertyGroup):
         subtype='XYZ'  # Display as a 3D vector
     )
 
+
+def _update_draw_operator(self, context):
+    bpy.ops.view3d.draw_red_markers('INVOKE_DEFAULT')
 
 
 
@@ -145,7 +147,8 @@ class MeshProp(bpy.types.PropertyGroup):
     draw_pins: bpy.props.BoolProperty( 
         name="Draw Pins", 
         description="Should draw red dots for all the pins", 
-        default=True
+        default=True, 
+        update=_update_draw_operator
     )
 
 

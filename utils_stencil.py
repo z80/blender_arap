@@ -3,7 +3,7 @@ import bpy
 import mathutils
 import bpy_extras.view3d_utils as v3du
 
-from utils_photogrammetry import *
+from .utils_photogrammetry import *
 
 def _project_to_screen(vector, region, rv3d):
     return v3du.location_3d_to_region_2d(region, rv3d, vector)

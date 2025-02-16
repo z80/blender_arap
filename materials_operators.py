@@ -1,8 +1,8 @@
 
 import bpy
 
-from panel_utils     import *
-from materials_utils import *
+from .panel_utils     import *
+from .materials_utils import *
 
 class MaterialProps(bpy.types.PropertyGroup):
     resolution: bpy.props.IntProperty( 

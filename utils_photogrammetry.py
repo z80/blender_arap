@@ -7,7 +7,7 @@ import numpy as np
 import mathutils
 from mathutils import Matrix, Quaternion, Vector
 
-import utils_filesystem
+from . import utils_filesystem
 
 def extract_frames_with_ffmpeg(video_path, ffmpeg_path, start_time, end_time, frames_qty, seconds_qty, scale_percentage=20.0 ):
     # Get the directory of the current Blender file
@@ -199,7 +199,8 @@ class Point3dProperties(bpy.types.PropertyGroup):
     )
 
 
-
+def _update_draw_operator(self, context):
+    bpy.ops.view3d.draw_red_markers('INVOKE_DEFAULT')
 
 class PhotogrammetryProperties(bpy.types.PropertyGroup):
     index: bpy.props.IntProperty( 
@@ -231,7 +232,8 @@ class PhotogrammetryProperties(bpy.types.PropertyGroup):
     show_point_cloud: bpy.props.BoolProperty( 
         name='Show point cloud', 
         description='Whether the point cloud should be visualized or not', 
-        default=False
+        default=False, 
+        update=_update_draw_operator
     )
 
     stencil_scale_adj: bpy.props.FloatProperty( 

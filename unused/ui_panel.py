@@ -21,9 +21,9 @@ from bpy_extras.view3d_utils import region_2d_to_vector_3d
 import sys
 import os
 
-dir = os.path.dirname(bpy.data.filepath)
-if not dir in sys.path:
-    sys.path.append( dir )
+#dir = os.path.dirname(bpy.data.filepath)
+#if not dir in sys.path:
+#    sys.path.append( dir )
     
 import install_needed_packages
 

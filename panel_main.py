@@ -1,10 +1,4 @@
 
-bl_info = {
-    "name": "Object cloning helper", 
-    "blender": (3, 6, 0), 
-    "category": "3D View", 
-}
-
 import bpy
 import bmesh
 import mathutils
@@ -12,21 +6,21 @@ import mathutils
 import sys
 import os
 
-dir = os.path.dirname(bpy.data.filepath)
-if not dir in sys.path:
-    sys.path.append( dir )
+#dir = os.path.dirname(bpy.data.filepath)
+#if not dir in sys.path:
+#    sys.path.append( dir )
     
-from utils_packages_install import *
+from .utils_packages_install import *
 need_packages = need_packages_installed()
 
 if not need_packages:
-    from panel_properties import *
-    from panel_operators  import *
-    from panel_draw       import *
+    from .panel_properties import *
+    from .panel_operators  import *
+    from .panel_draw       import *
 
-    from utils_photogrammetry import *
-    from panel_operators_photogrammetry import *
-    from materials_operators import *
+    from .utils_photogrammetry import *
+    from .panel_operators_photogrammetry import *
+    from .materials_operators import *
 
 
 class MESH_PT_MeshEditPanel(bpy.types.Panel):

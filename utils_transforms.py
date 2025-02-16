@@ -4,8 +4,8 @@ from scipy.sparse.linalg import spsolve
 from scipy.sparse.csgraph import dijkstra
 
 
-from utils_geometry import *
-from utils_falloff import *
+from .utils_geometry import *
+from .utils_falloff import *
 
 
 

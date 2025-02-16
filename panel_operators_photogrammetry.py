@@ -3,8 +3,8 @@ import bpy
 import os
 import subprocess
 
-from utils_photogrammetry import *
-from utils_stencil import *
+from .utils_photogrammetry import *
+from .utils_stencil import *
 
 # Operator to call COLMAP
 class WM_OT_CallColmap(bpy.types.Operator):

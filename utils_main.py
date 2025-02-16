@@ -3,10 +3,10 @@ from scipy.sparse import csr_matrix
 from scipy.sparse.linalg import spsolve
 from scipy.sparse.csgraph import dijkstra
 
-from utils_distance   import *
-from utils_transforms import *
-from utils_geometry   import *
-from utils_falloff    import *
+from .utils_distance   import *
+from .utils_transforms import *
+from .utils_geometry   import *
+from .utils_falloff    import *
 
 VERY_FAR_DISTANCE = 1.0e10
 
